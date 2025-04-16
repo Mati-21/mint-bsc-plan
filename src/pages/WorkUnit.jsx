@@ -1,9 +1,5 @@
 function WorkUnit() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div>This is Workunit page</div>;
 }
 
-export default WorkUnit
+export default WorkUnit;

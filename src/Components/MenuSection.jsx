@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-function MenuSection({ data, stat, activestat }) {
+function MenuSection({ data, stat, activestat, toggleSidebar }) {
   return (
     <div className="w-full bg-green-900 text-white p-2 rounded-lg ">
       <div>
@@ -23,6 +23,7 @@ function MenuSection({ data, stat, activestat }) {
                   <a
                     key={submenu}
                     href="#"
+                    onClick={toggleSidebar}
                     className="block p-2 border border-white mb-2 text-xs hover:bg-gray-700 rounded transition-colors"
                   >
                     {submenu}

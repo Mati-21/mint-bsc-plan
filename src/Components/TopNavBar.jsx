@@ -5,30 +5,42 @@ import { IoIosNotifications } from "react-icons/io";
 import manjpg from "../assets/man.jpg";
 import { IoMdMenu } from "react-icons/io";
 
-function Top() {
+function Top({ toggleSidebar }) {
   return (
-    <div className="flex justify-between px-4 py-1 bg-white lg:pl-8 lg:py-2 lg:pr-24 lg:text-lg ">
+    <div className="w-full flex justify-between  bg-white px-4 py-1 lg:col-start-2 lg:col-end-3 lg:justify-between  lg:pl-8 lg:py-2 lg:pr-24 lg:text-lg ">
       <div className="flex gap-8 items-center">
-        <IoMdMenu size={23} />
-        <div className="sm:hidden lg:block lg:flex lg:gap-2 lg:items-center ">
-          <IoHome />
-          <NavLink to="/" className="text-sm">
+        <IoMdMenu
+          size={23}
+          className="cursor-pointer"
+          onClick={toggleSidebar}
+        />
+        <div>
+          <NavLink
+            to="/"
+            className="hidden text-sm lg:flex lg:gap-2 lg:items-center "
+          >
+            <IoHome size={23} />
             Home
           </NavLink>
         </div>
-        <div className="sm:hidden lg:block lg:flex lg:gap-2 lg:items-center">
-          <HiChatBubbleLeftEllipsis />
-          <NavLink className="text-sm">Contact</NavLink>
+        <div>
+          <NavLink className="text-sm hidden  lg:flex lg:gap-2 lg:items-center">
+            <HiChatBubbleLeftEllipsis size={23} />
+            Contact
+          </NavLink>
         </div>
-        <div className="sm:hidden lg:block lg:flex lg:gap-2 lg:items-center">
-          <IoIosNotifications />
-          <NavLink to="/notification" className="text-sm">
+        <div>
+          <NavLink
+            to="/notification"
+            className="text-sm hidden  lg:flex lg:gap-2 lg:items-center"
+          >
+            <IoIosNotifications size={23} />
             Notification
           </NavLink>
         </div>
       </div>
 
-      <div className="flex items-center gap-6 ">
+      <div className="flex items-center gap-2 lg:gap-6 ">
         <div className="h-10 w-10  rounded-full overflow-hidden">
           <img src={manjpg} alt="user" />
         </div>
