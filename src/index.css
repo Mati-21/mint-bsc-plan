@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #98ff98;
+}
+
 @layer utilities {
   .thin-scrollbar {
     @apply overflow-auto;

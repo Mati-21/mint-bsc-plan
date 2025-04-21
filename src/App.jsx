@@ -9,6 +9,7 @@ import WorkUnit from "./pages/WorkUnit";
 import Login from "../src/pages/Login";
 import Minister from "./pages/Minister";
 import PageNotFound from "./pages/PageNotFound";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient({
   defaultOptions: {},
@@ -25,6 +26,7 @@ function App() {
             <Route path="workunit" element={<WorkUnit />} />
             <Route path="minister" element={<Minister />} />
           </Route>
+          <Route path="Admin" element={<Admin />} />
 
           <Route path="/" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />

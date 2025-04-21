@@ -11,6 +11,7 @@
     "serve-j": "json-server src/Data/UsersData.json --port 8000"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.1.3",
     "@tanstack/react-query": "^5.74.3",

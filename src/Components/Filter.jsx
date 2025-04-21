@@ -9,7 +9,7 @@ function Filter() {
       <div className="lg:px-6 lg:py-2 lg:flex lg:flex-col lg:gap-2 ">
         <div className=" hidden lg:flex gap-4">
           <div className="flex gap-2 flex-col flex-1">
-            <label for="choices" className="text-sm">
+            <label htmlFor="choices" className="text-sm">
               Select Time Period
             </label>
             <select
@@ -26,7 +26,7 @@ function Filter() {
             </select>
           </div>
           <div className="flex gap-2 flex-col flex-1">
-            <label for="choices" className="text-sm">
+            <label htmlFor="choices" className="text-sm">
               Select Year
             </label>
             <select
@@ -43,7 +43,7 @@ function Filter() {
             </select>
           </div>
           <div className="flex gap-2 flex-col flex-1">
-            <label for="choices" className="text-sm">
+            <label htmlFor="choices" className="text-sm">
               Select Threshold
             </label>
             <select
@@ -60,7 +60,7 @@ function Filter() {
             </select>
           </div>
           <div className="flex gap-2 flex-col flex-1">
-            <label for="choices" className="text-sm">
+            <label htmlFor="choices" className="text-sm">
               Select Time Ministry
             </label>
             <select

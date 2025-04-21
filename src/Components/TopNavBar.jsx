@@ -5,9 +5,11 @@ import { IoIosNotifications } from "react-icons/io";
 import manjpg from "../assets/man.jpg";
 import { IoMdMenu } from "react-icons/io";
 
-function Top({ toggleSidebar }) {
+function Top({ toggleSidebar, bgColor = "bg-white" }) {
   return (
-    <div className="w-full flex justify-between  bg-white px-4 py-1 lg:col-start-2 lg:col-end-3 lg:justify-between  lg:pl-8 lg:py-2 lg:pr-24 lg:text-lg ">
+    <div
+      className={`w-full flex justify-between  px-4 py-1 lg:col-start-2 lg:col-end-3 lg:justify-between  lg:pl-8 lg:py-2 lg:pr-24 lg:text-lg  ${bgColor} `}
+    >
       <div className="flex gap-8 items-center">
         <IoMdMenu
           size={23}
