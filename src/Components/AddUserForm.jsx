@@ -7,9 +7,9 @@ const AddUserForm = () => {
     role: "",
     sector: "",
     password: "",
-    confirmPassword: "",
   });
 
+  console.log(formData);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -17,10 +17,6 @@ const AddUserForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
 
     console.log("Submitted data:", formData);
 
@@ -31,7 +27,6 @@ const AddUserForm = () => {
       role: "",
       sector: "",
       password: "",
-      confirmPassword: "",
     });
   };
 
