@@ -5,22 +5,32 @@
 }
 
 @layer utilities {
-  .thin-scrollbar {
-    @apply overflow-auto;
-    scrollbar-width: thin;
-    scrollbar-color: #4a5568 #2d3748;
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
-  /* WebKit browsers */
-  .thin-scrollbar::-webkit-scrollbar {
-    @apply w-1.5 h-1.5;
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
   }
 
-  .thin-scrollbar::-webkit-scrollbar-track {
-    @apply bg-gray-800 rounded-full;
+  .shadow-black-all {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 4px 0 6px -1px rgba(0, 0, 0, 0.1),
+      -4px 0 6px -1px rgba(0, 0, 0, 0.1);
   }
 
-  .thin-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 rounded-full hover:bg-gray-500;
+  .shadow-blue-all {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 255, 0.1),
+      0 4px 6px -1px rgba(0, 0, 255, 0.1), 4px 0 6px -1px rgba(0, 0, 255, 0.1),
+      -4px 0 6px -1px rgba(0, 0, 255, 0.1);
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 }

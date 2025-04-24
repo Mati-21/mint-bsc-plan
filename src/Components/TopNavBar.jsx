@@ -1,22 +1,25 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { HiChatBubbleLeftEllipsis } from "react-icons/hi2";
 import { IoIosNotifications } from "react-icons/io";
-import manjpg from "../assets/man.jpg";
+
 import { IoMdMenu } from "react-icons/io";
 
-function Top({ toggleSidebar, bgColor = "bg-white" }) {
+import ImageDropdown from "./Dropdown/ImageDropdown";
+import { useDispatch } from "react-redux";
+import { showMainSidenav } from "../slices/mainSidebarSlice";
+
+function Top({ bgColor = "bg-white" }) {
+  const dispatch = useDispatch();
   return (
-    <div
-      className={`w-full flex justify-between  px-4 py-1 lg:col-start-2 lg:col-end-3 lg:justify-between  lg:pl-8 lg:py-2 lg:pr-24 lg:text-lg  ${bgColor} `}
-    >
-      <div className="flex gap-8 items-center">
+    <div className="bg-green-600 text-white items-center duration-500 flex justify-between pl-1 pr-4 lg:pl-4 lg:pr-16 py-2">
+      <div className=" flex gap-6 px-2">
         <IoMdMenu
           size={23}
-          className="cursor-pointer"
-          onClick={toggleSidebar}
+          className=" cursor-pointer lg:hidden"
+          onClick={() => dispatch(showMainSidenav())}
         />
-        <div>
+        <div className="flex gap-4">
           <NavLink
             to="/"
             className="hidden text-sm lg:flex lg:gap-2 lg:items-center "
@@ -24,14 +27,11 @@ function Top({ toggleSidebar, bgColor = "bg-white" }) {
             <IoHome size={23} />
             Home
           </NavLink>
-        </div>
-        <div>
+
           <NavLink className="text-sm hidden  lg:flex lg:gap-2 lg:items-center">
             <HiChatBubbleLeftEllipsis size={23} />
             Contact
           </NavLink>
-        </div>
-        <div>
           <NavLink
             to="/notification"
             className="text-sm hidden  lg:flex lg:gap-2 lg:items-center"
@@ -41,12 +41,9 @@ function Top({ toggleSidebar, bgColor = "bg-white" }) {
           </NavLink>
         </div>
       </div>
-
-      <div className="flex items-center gap-2 lg:gap-6 ">
-        <div className="h-10 w-10  rounded-full overflow-hidden">
-          <img src={manjpg} alt="user" />
-        </div>
-        <p className="text-sm">Jonas</p>
+      <div className="flex gap-4 items-center">
+        <p className="hidden lg:block">Matimelkamu@gmail.com</p>
+        <ImageDropdown />
       </div>
     </div>
   );

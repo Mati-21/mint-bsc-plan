@@ -1,21 +1,26 @@
 import TopNavBar from "./TopNavBar";
-import SideNavBar from "./SideNavBar";
+import SideNavBar from "../Components/SideBar/SideNavBar";
 import Main from "./Main";
 import { useState } from "react";
 
 function AppLayout() {
-  const [isSideOpen, setISSideOpen] = useState(true);
+  const [openSideNav, setOpenSideNav] = useState(true);
 
   function toggleSidebar() {
-   
-    setISSideOpen((curr) => !curr);
+    setOpenSideNav((curr) => !curr);
   }
 
   return (
-    <div className=" w-screen lg:grid  lg:grid-cols-[18rem_1fr] lg:grid-rows-[auto_auto]">
-      <TopNavBar toggleSidebar={toggleSidebar} />
-      <Main />
-      <SideNavBar isSideOpen={isSideOpen} toggleSidebar={toggleSidebar}  />
+    <div className="flex ">
+      {/* Side Nav Bar */}
+      <div className="h-screen ">
+        <SideNavBar isSideOpen={openSideNav} toggleSidebar={toggleSidebar} />
+      </div>
+      {/* Main Section */}
+      <div className="flex-1 flex flex-col ">
+        <TopNavBar  />
+        <Main />
+      </div>
     </div>
   );
 }
